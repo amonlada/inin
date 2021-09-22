@@ -7,6 +7,29 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Install
+composer install
+npm install
+composer require laravel/ui
+
+# ui
+php artisan ui vue --auth
+php artisan ui bootstrap
+php artisan ui bootstrap --auth
+npm run dev
+composer require laravel-frontend-presets/argon
+php artisan ui argon 
+composer dump-autoload
+
+
+## Create file .env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=inin
+DB_USERNAME=root
+DB_PASSWORD=
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

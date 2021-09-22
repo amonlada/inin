@@ -26,6 +26,18 @@
                         <i class="ni ni-single-02"></i>
                         <span>{{ __('My profile') }}</span>
                     </a>
+                    <a href="#" class="dropdown-item">
+                        <i class="ni ni-settings-gear-65"></i>
+                        <span>{{ __('Settings') }}</span>
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <i class="ni ni-calendar-grid-58"></i>
+                        <span>{{ __('Activity') }}</span>
+                    </a>
+                    <a href="#" class="dropdown-item">
+                        <i class="ni ni-support-16"></i>
+                        <span>{{ __('Support') }}</span>
+                    </a>
                     <div class="dropdown-divider"></div>
                     <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
@@ -68,25 +80,20 @@
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('home') }}">
-                        <i class="ni ni-tv-2 text-primary"></i> {{ __('หน้าหลัก') }}
+                        <i class="ni ni-tv-2 text-primary"></i> {{ __('Dashboard') }}
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link active" href="#navbar-examples" data-toggle="collapse" role="button" aria-expanded="true" aria-controls="navbar-examples">
                         <i class="fab fa-laravel" style="color: #f4645f;"></i>
-                        <span class="nav-link-text" style="color: #f4645f;">{{ __('หลักสูตร') }}</span>
+                        <span class="nav-link-text" style="color: #f4645f;">{{ __('Laravel Examples') }}</span>
                     </a>
 
                     <div class="collapse show" id="navbar-examples">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('subject') }}">
-                                    {{ __('รายชื่อหลักสูตร') }}
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('user.index') }}">
-                                    {{ __('') }}
+                                <a class="nav-link" href="{{ route('profile.edit') }}">
+                                    {{ __('User profile') }}
                                 </a>
                             </li>
                             <li class="nav-item">

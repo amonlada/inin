@@ -23,7 +23,4 @@ class HomeController extends Controller
     {
         return view('dashboard');
     }
-    public function subject(){
-        return view('subject');
-    }
 }
