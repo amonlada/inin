@@ -63,3 +63,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::put('profile/password', ['as' => 'profile.password', 'uses' => 'App\Http\Controllers\ProfileController@password']);
 });
 
+//subject
+Route::get('/subject', [App\Http\Controllers\SubjectController::class, 'subject'])->name('subject');
+Route::get('/editsubject', [App\Http\Controllers\SubjectController::class, 'editsubject'])->name('editsubject');

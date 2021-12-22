@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('layouts.headers.viewsubject')
+    @include('layouts.headers.createsubject')
     
     <div class="container-fluid mt--7">
        
