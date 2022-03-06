@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBranchTable extends Migration
+class CreateAdminTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,12 @@ class CreateBranchTable extends Migration
      */
     public function up()
     {
-        //สาขาวิชา
-        Schema::create('branch', function (Blueprint $table) {
+        Schema::create('admin', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('branch_name');
-            $table->string('branch_phone');
-            $table->string('brannch_Code');
-            $table->foreign('id_faculty')->references('id')->on('faculty')->onDelete('cascade');
-
-
+            
+              
+           
         });
     }
 
@@ -33,6 +29,6 @@ class CreateBranchTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('branch');
+        Schema::dropIfExists('admin');
     }
 }

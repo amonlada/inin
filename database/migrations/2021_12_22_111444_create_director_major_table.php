@@ -4,25 +4,25 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCourseTable extends Migration
+class CreateDirectorMajorTable extends Migration
 {
     /**
      * Run the migrations.
      *
      * @return void
      */
-
-     //วิชาเรียน
     public function up()
     {
-        Schema::create('course', function (Blueprint $table) {
+        Schema::create('director_major', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('course_name');
-            $table->string('credit_course');
-            $table->foreign('id_major')->references('id')->on('major')->onDelete('cascade');
-            $table->foreign('id_syllabus')->references('id')->on('syllabus')->onDelete('cascade');
+            $table->string('director_major_name');
 
+            $table->unsignedBigInteger('id_major');
+            $table->foreign('id_major')->references('id')->on('major')->onDelete('cascade');
+
+            $table->unsignedBigInteger('id_teacher');
+            $table->foreign('id_teacher')->references('id')->on('teacher')->onDelete('cascade');
         });
     }
 
@@ -33,6 +33,6 @@ class CreateCourseTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('course');
+        Schema::dropIfExists('director_major');
     }
 }

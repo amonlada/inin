@@ -11,8 +11,6 @@ class CreateActivityTable extends Migration
      *
      * @return void
      */
-
-     //กิจกรรม
     public function up()
     {
         Schema::create('activity', function (Blueprint $table) {
@@ -24,10 +22,10 @@ class CreateActivityTable extends Migration
             $table->string('activity_responsible');
             $table->string('activity_year');
             $table->string('activity_number');
-            $table->string('activity_responsible');
             $table->date('activity_apply');
-            $table->foreign('id_activity_type')->references('id')->on('activity_type')->onDelete('cascade');
-            $table->foreign('id_personnel')->references('id')->on('personnel')->onDelete('cascade');
+            $table->string('activity_type');
+            $table->string('activity_numberofcredits');
+
 
         });
     }

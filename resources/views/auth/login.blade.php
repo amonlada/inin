@@ -15,9 +15,9 @@
                     <div class="card-body px-lg-5 py-lg-5">
                         <div class="text-center text-muted mb-4">
                             <small>
-                                    Create new account OR Sign in with these credentials:
+                                    Create new account OR Sign in:
                                     <br>
-                                    Username <strong>admin@argon.com</strong> Password: <strong>secret</strong>
+                                    Username <strong>admin@kkumail.com</strong> Password: <strong>secret</strong>
                             </small>
                         </div>
                         \

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Activity;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,5 +66,33 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 //subject
-Route::get('/subject', [App\Http\Controllers\SubjectController::class, 'subject'])->name('subject');
-Route::get('/editsubject', [App\Http\Controllers\SubjectController::class, 'editsubject'])->name('editsubject');
+Route::get('/subject', [App\Http\Controllers\SubjectController::class, 'index'])->name('subject');
+Route::post('/addsubject', [App\Http\Controllers\SubjectController::class, 'store']); // เพิ่ม
+Route::post('/editsubject', [App\Http\Controllers\SubjectController::class, 'update']); // แก้ไข
+Route::get('/deletesubject/{id}', [App\Http\Controllers\SubjectController::class, 'destroy']); // ลบ
+//activity
+
+Route::get('/activity', [App\Http\Controllers\ActivityController::class, 'index'])->name('activity');
+Route::post('/addactivity', [App\Http\Controllers\ActivityController::class, 'store']); // เพิ่ม
+Route::post('/editactivity', [App\Http\Controllers\ActivityController::class, 'update']); // แก้ไข
+Route::get('/deleteactivity/{id}', [App\Http\Controllers\ActivityController::class, 'destroy']); // ลบ
+//คณะ
+Route::get('/faculty', [App\Http\Controllers\FacultyController::class, 'index'])->name('faculty');
+Route::post('/addfaculty', [App\Http\Controllers\FacultyController::class, 'store']); // เพิ่ม
+Route::post('/editfaculty', [App\Http\Controllers\FacultyController::class, 'update']); // แก้ไข
+Route::get('/deletefaculty/{id}', [App\Http\Controllers\FacultyController::class, 'destroy']); // ลบ
+//อาจารย์
+Route::get('/teacher', [App\Http\Controllers\TeacherController::class, 'index'])->name('teacher');
+Route::get('/deleteteacher/{id}', [App\Http\Controllers\TeacherController::class, 'destroy']); // ลบ
+Route::post('/editteacher', [App\Http\Controllers\TeacherController::class, 'update']); // แก้ไข
+//branch
+Route::get('/branch', [App\Http\Controllers\BranchController::class, 'index'])->name('branch');
+Route::post('/addbranch', [App\Http\Controllers\BranchController::class, 'store']); // เพิ่ม
+Route::post('/editbranch', [App\Http\Controllers\BranchController::class, 'update']); // แก้ไข
+Route::get('/deletebranch/{id}', [App\Http\Controllers\BranchController::class, 'destroy']); // ลบ
+
+//major
+Route::get('/major', [App\Http\Controllers\MajorController::class, 'index'])->name('major');
+Route::post('/addmajor', [App\Http\Controllers\MajorController::class, 'store']); // เพิ่ม
+Route::post('/editmajor', [App\Http\Controllers\MajorController::class, 'update']); // แก้ไข
+Route::get('/deletemajor/{id}', [App\Http\Controllers\MajorController::class, 'destroy']); // ลบ

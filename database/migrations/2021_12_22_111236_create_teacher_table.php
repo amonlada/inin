@@ -20,7 +20,11 @@ class CreateTeacherTable extends Migration
             $table->string('teacher_room');
             $table->string('teacher_phone');
             $table->string('teacher_email');
+            $table->string('teacher_image'); //url
+
+            $table->unsignedBigInteger('id_branch');
             $table->foreign('id_branch')->references('id')->on('branch')->onDelete('cascade');
+            
 
         });
     }

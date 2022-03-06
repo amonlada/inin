@@ -11,16 +11,19 @@ class CreateMajorTable extends Migration
      *
      * @return void
      */
-    //วิชาเอก
     public function up()
     {
         Schema::create('major', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('major_name');
-            $table->string('credit');
+            $table->string('major_numberofcredits');
+            $table->string('major_money');
+            $table->string('major_mainsubject');
 
-            $table->foreign('id_syllabus')->references('id')->on('syllabus')->onDelete('cascade');
+            $table->unsignedBigInteger('id_branch');
+            $table->foreign('id_branch')->references('id')->on('branch')->onDelete('cascade');
+           
 
         });
     }

@@ -19,11 +19,13 @@ class CreateFacultyTable extends Migration
             $table->string('faculty_name');
             $table->string('faculty_address');
             $table->string('faculty_phone');
-       
+            $table->string('faculty_executive');
+            $table->string('faculty_position');
+            $table->string('faculty_year');
+            $table->string('faculty_email');
 
         });
     }
-    //คณะ
 
     /**
      * Reverse the migrations.
