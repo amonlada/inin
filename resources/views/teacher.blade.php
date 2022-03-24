@@ -19,21 +19,24 @@
 
 
 <div class="container">
+
     @foreach ($data as $item)
 
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+
+    <div class=" row-cols-3 row-cols-md-3 g-4">
         <div class="col-d-md-5">
             <div class="card">
                 <div class="container">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
-                        class="bi bi-person-circle" viewBox="0 0 16 16">
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                        <path fill-rule="evenodd"
-                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                    </svg>
+                    <div class="text-center">
+                        <img src="https://www.nkc.kku.ac.th/nkc2021/images/staff/8V6vFjJvJYkyDP2Sdc8fqt8Pi8ZnC0bR.png"
+                            hight="200" width="200" class="rounded" alt="...">
+                    </div>
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">{{ $item['teacher_name'] }}</h5>
+
+                <div class="card-body  ">
+                    <h5 class="card-title">{{ $item['teacher_image'] }}</h5>
+                    <h5>{{ $item['teacher_name'] }}</h5>
                     <h5> ห้องพัก : {{ $item['teacher_room'] }} </h5>
                     <h5> เบอร์โทรติดต่อ : {{ $item['teacher_phone'] }} </h5>
                     <h5> E-mail : {{ $item['teacher_email'] }} </h5>
@@ -56,7 +59,7 @@
 
     </div>
 
-<!-- Modal edit-->
+    <!-- Modal edit-->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -100,7 +103,7 @@
                                         placeholder="กรอกข้อมูล" value="{{$item['teacher_email']}}">
                                 </div>
                             </div>
-                            
+
 
                         </div>
                         <div class="modal-footer">
@@ -114,6 +117,70 @@
         </div>
     </div>
     @endforeach
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <a type="button" class="btn btn-success me-md-2 rounded" data-toggle="modal" data-target="#create"
+            style="width:100px;">เพิ่ม</a>
+    </div>
+    <!-- Modal create teacher-->
+    <div class="modal fade" id="create" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">เพิ่ม</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="POST" action="/addteacher">
+                        @csrf
+                        <div class="col">
+
+                            <div class="input-group mb-3">
+                                <input type="file" class="form-control" id="inputGroupFile02">
+                                <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="text" class="col-sm-2 col-form-label">ชื่อ</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputPassword" name="teacher_name"
+                                        placeholder="กรอกข้อมูล" value="">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-2 col-form-label">ห้องพัก</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputPassword" name="teacher_room"
+                                        placeholder="กรอกข้อมูล" value="">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-2 col-form-label">เบอร์โทรติดต่อ</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputPassword" name="teacher_phone"
+                                        placeholder="กรอกข้อมูล" value="">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputPassword" class="col-sm-2 col-form-label">E-Mail</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputPassword" name="teacher_email"
+                                        placeholder="กรอกข้อมูล" value="">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 @include('layouts.footers.auth')

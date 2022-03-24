@@ -83,8 +83,10 @@ Route::post('/editfaculty', [App\Http\Controllers\FacultyController::class, 'upd
 Route::get('/deletefaculty/{id}', [App\Http\Controllers\FacultyController::class, 'destroy']); // ลบ
 //อาจารย์
 Route::get('/teacher', [App\Http\Controllers\TeacherController::class, 'index'])->name('teacher');
+Route::post('/addteacher', [App\Http\Controllers\TeacherController::class, 'store']); // เพิ่ม
 Route::get('/deleteteacher/{id}', [App\Http\Controllers\TeacherController::class, 'destroy']); // ลบ
 Route::post('/editteacher', [App\Http\Controllers\TeacherController::class, 'update']); // แก้ไข
+Route::post('imageUploadPost', [ TeacherController::class, 'imageUploadPost' ])->name('image.upload.post');
 //branch
 Route::get('/branch', [App\Http\Controllers\BranchController::class, 'index'])->name('branch');
 Route::post('/addbranch', [App\Http\Controllers\BranchController::class, 'store']); // เพิ่ม

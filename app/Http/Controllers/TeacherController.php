@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Teacher;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Input as Input;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\Console\Input\Input as InputInput;
 
 class TeacherController extends Controller
 {
@@ -29,6 +31,7 @@ class TeacherController extends Controller
         $teacher = new Teacher();
         $teacher->teacher_name = $request->teacher_name;
         $teacher->teacher_room = $request->teacher_room;
+        $teacher->teacher_image=$request->teacher_image;
         $teacher->teacher_phone = $request->teacher_phone;
         $teacher->teacher_email = $request->teacher_email;
         $teacher->id_branch = 1;
@@ -41,6 +44,7 @@ class TeacherController extends Controller
         $teacher = Teacher::where('id',$request->id)->update([
             'teacher_name'=> $request->teacher_name,
             'teacher_room'=> $request->teacher_room,
+            'teacher_image'=> $request->teacher_image,
             'teacher_phone'=> $request->teacher_phone,
             'teacher_email'=> $request->teacher_email,
             'id_branch'=>1,
@@ -52,4 +56,5 @@ class TeacherController extends Controller
         $teacher = Teacher::destroy($id);
         return redirect('/teacher');
     }
+    
 }
