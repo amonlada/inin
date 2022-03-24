@@ -119,7 +119,7 @@
                 </li>
 
 
-                <li class="nav-item">
+                <!--  <li class="nav-item">
                     <a class="nav-link" href="{{ route('activity') }}">
                         <i class=""><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                 class="bi bi-people-fill" viewBox="0 0 16 16">
@@ -130,7 +130,7 @@
                             </svg></i> {{ __('กรรมการหลักสูตร') }}
                     </a>
                 </li>
-
+                -->
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('teacher') }}">
                         <i class=""><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -150,8 +150,8 @@
             <!-- Divider -->
             <hr class="my-3">
 
-            
+
         </div>
-        <h5 class="text-danger">  </h5>
+        <h5 class="text-danger"> </h5>
     </div>
 </nav>
